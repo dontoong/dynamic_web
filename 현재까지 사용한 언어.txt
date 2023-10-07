@@ -1,12 +1,2 @@
 사용한 언어 : css, html, js
 프레임워크 및 라이브러리 : aos, react, bootstrap
-werwerddd
-
-sfsfsf
-
-sdfsdf
-
-
-aaa
-
-ss
