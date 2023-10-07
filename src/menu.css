@@ -1,0 +1,162 @@
+*{padding:0;margin:0}
+li{list-style:none}
+a{text-decoration:none;font-size:14px}
+
+
+body {
+  background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ), url(../image/main/cigar_people.jpg);
+  background-size:100%;
+  opacity: 1;
+  color: #fff;
+  font-family: 빙그레 메로나체;
+  font-size: 20px;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+h1 {
+  color:#ffffff;
+  text-align: center;
+}
+
+/* 상위 메뉴 */
+.topMenu {
+    position:relative;
+    width: auto;
+    /*padding: 10px 0px;*/
+    /*overflow: hidden;*/
+    margin: 100px auto;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+  }
+
+  .topMenu:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.menu > li {
+    width: 20%; /*20*5=100%*/
+    float:left;
+    text-align: center;
+    line-height: 40px;
+  }
+
+
+.menu a {
+    color: #fff;
+    font-family: 빙그레 메로나체;
+    font-size: 30px;
+  }
+
+
+/*
+  .menu > li:hover {
+    background-color: #94a9ff;
+    transition-duration: 1s;
+    overflow:visible;
+  }
+*/
+
+
+/* 서브 메뉴 */
+.submenu {
+    position:absolute;
+    display:none;
+    width:20%;
+    z-index:20;
+    /*height: 0; /*ul의 높이를 안보이게 처리*/
+    /*overflow: hidden;*/
+    
+  }
+
+.submenu > li {
+    line-height: 50px;
+    background-color: #858585;
+  }
+
+.submenu a {
+    font-size: 20px;
+    /*overflow:visible;*/
+  }
+
+  #nop{
+    float:none;
+  }
+
+/*
+.menu > li:hover .submenu {
+    height: 200px; /*서브메뉴 li한개의 높이 50*5
+    transition-duration:1s;
+    overflow:visible;
+    display:block;
+    clear:both;
+}
+*/
+
+.none:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:5px;
+  width:15%;
+}
+
+/* 슬릭 슬라이드 */
+.auto-slide {
+  position:relative;
+  z-index:10;
+  transition-delay:0.5s;
+}
+
+.auto-slide .prev {
+  position:absolute;
+  bottom:-100px;
+  left:40%;
+  color:#ffffff;
+  transition: color 0.3s ease;
+  width:50px;
+  height:50px;
+  background:#000000;
+  transition: background-color 0.3s ease;
+  border-radius:50%;
+  text-align:center;
+  line-height:50px;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.auto-slide .next {
+  position:absolute;
+  bottom:-100px;
+  right:40%;
+  color:#ffffff;
+  transition: color 0.3s ease;
+  width:50px;
+  height:50px;
+  background:#000000;
+  transition: background-color 0.3s ease;
+  border-radius:50%;
+  text-align:center;
+  line-height:50px;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.auto-slide img {
+  width:456px;
+  height:304px;
+}

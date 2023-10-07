@@ -1,0 +1,230 @@
+.body {
+    font-size:20px!important;
+}
+
+.login-page {
+  display: inline-block!important;
+  width:60vh;
+  height: 58vh;
+  background-color: white; /* 하얀 배경 색상 */
+  color:black!important;
+  border-radius: 40px; /* border-radius 추가 */
+  margin-left:34%!important;
+}
+
+.register-page {
+  display: inline-block!important;
+  width:60vh;
+  height: 78vh;
+  background-color: white; /* 하얀 배경 색상 */
+  color:black!important;
+  border-radius: 40px; /* border-radius 추가 */
+  margin-left:34%!important;
+}
+
+.member_btn {
+  margin-right:15px;
+  float:right;
+  background-color:#1976D2!important;
+  border-color: #1976D2!important;
+  font-family: sans-serif!important;
+  margin-right:2px!important;
+  margin-top:7px!important;
+}
+
+.member_btn:hover{
+  background-color: #1565C0!important;
+  border-color: #1565C0!important;
+  font-family: sans-serif;
+  color:white!important;
+}
+
+
+.MuiTypography-root {
+  color: black !important;
+}
+
+.displayText {
+  font-size:14px;
+  margin-left:18px;
+}
+
+.id_yes{
+  color:#1976D2;
+}
+
+.id_no{
+  color:#ff4f46;
+}
+
+.terms {
+  margin-left:18px!important;
+}
+
+/* 각 상세 페이지 */
+.esse{
+    display: grid!important;
+    grid-template-columns: 1fr 1fr!important; /* 2열 */
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr!important; /* 6행 */
+    grid-column-gap: 20px!important; /* 이미지 간격을 20px로 설정 */
+    height:100%!important;
+}
+
+.esse_image {
+  width:50%!important;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+.raison{
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr; /* 3행 */
+  grid-column-gap: 20px!important; /* 이미지 간격을 20px로 설정 */
+  height:100%!important;
+}
+
+.raison_image {
+  width:40%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+.the_one {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr; /* 2행 */
+  height:100%!important;
+}
+
+.the_one_image {
+  width:30%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+.this {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr; /* 2행 */
+  height:100%!important;
+}
+
+.this_image {
+  width:25%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+.mevius {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr; /* 3행 */
+  height:100%!important;
+}
+
+.mevius_image {
+  width:20%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+.malbooro {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr 1fr; /* 4행 */
+  height:100%!important;
+}
+
+.malbooro_image {
+  width:30%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+.dunhill {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr 1fr; /* 4행 */
+  height:100%!important;
+}
+
+.dunhill_image{
+  width:30%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+
+
+.추천기기 {
+  font-size:20px!important;
+}
+.miix {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6행 */
+  height:100%!important;
+}
+
+.miix_image {
+  width:40%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:20px!important;
+}
+
+
+.neo {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr; /* 3행 */
+  height:100%!important;
+}
+
+.neo_image {
+  width:30%;
+  margin-left: 100px!important; /* 이미지 주위에 10px의 여백을 추가 */
+  margin-top:30px!important;
+}
+.hr_3px {
+    width : 100%!important;
+    border: 2px solid!important;
+    color:white!important;
+}
+
+.hr_source {
+  width : 100%!important;
+  border: 1px solid!important;
+  color:#ffffff!important; 
+}
+
+h1 {
+  color:#ffffff!important;
+  text-align: center;
+}
+
+h2 {
+    font-weight: bold!important;
+}
+
+h3 {
+  color: #e39c98!important;
+  font-weight: bold!important;
+}
+
+.price_4500 {
+  color: #a84b4b!important;
+  font-weight: bold!important;
+}
+
+.price_low_4500 {
+  color: #345eb8!important;
+  font-weight: bold!important;
+}
+
+.carousel-indicators {
+  position: relative!important;
+  top: 630px!important;
+  height: 100px!important; /* 하단 여백 조절 */
+  text-align: center!important;
+  z-index: 10!important; /* 다른 컨텐츠 위에 표시되도록 설정 */
+}

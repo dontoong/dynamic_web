@@ -1,0 +1,138 @@
+* {
+  font-family: 빙그레 메로나체; /* 기본 폰트 설정*/
+}
+
+/* 배경 설정 */
+body {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ), url("../public/image/main/cigar_people.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+  background-attachment: fixed;
+  color:white!important;
+}
+
+.welcome {
+  float:right;
+}
+/* 헤더파일의 상단 이미지 크기 */
+.header-img {
+  width:15%!important;
+}
+
+/* 로그인과 회원가입 버튼 */
+.btn{
+  margin-right:15px;
+  float:right;
+  background-color:#666666!important;
+  border-color: #666666!important;
+}
+
+.btn:hover{
+  background-color: white!important;
+  border-color: white!important;
+  color:black!important;
+}
+
+
+/* 탭 메뉴 스타일*/
+
+/* 탭 메뉴 가로 길이 지정 */
+.nav.nav-tabs {
+  display: flex;
+  width: 100%;
+}
+
+/* 탭 메뉴 가로 길이 지정 & 텍스트 가운데 정렬*/
+.nav-item {
+  flex-grow: 1;
+  text-align: center;
+  border-radius:0px!important;
+}
+
+/* 글자색을 빨간색으로 변경하고, 기본 부트스트랩 스타일 덮어쓰기 */
+.nav-tabs .nav-link {
+  font-size:30px;
+  background-color: black;
+  color: white;
+  border-top-left-radius: 0% !important;
+  border-top-right-radius: 0% !important;
+}
+
+/* 활성화된 탭의 글자색을 파란색으로 변경 */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  border-color: #999999!important;
+  background-color: #999999!important;
+  color: black!important;
+
+}
+
+/* 호버 시 탭 메뉴 스타일 변경 */
+.nav-tabs .nav-item:hover .nav-link {
+  border-color: #999999!important;
+  background-color: #999999;
+  color: black;
+}
+
+
+
+
+
+/* 카드 스타일 */
+.card {
+  margin:20px!important;
+  border-radius: 10%!important;
+  display:flex;
+  float:left;
+  background-color: #666666!important;
+  color:white!important;
+}
+
+.card-img {
+  border-radius: 10%!important;
+  width:100%!important;
+  height:20rem;
+  object-fit: cover;
+}
+
+
+.card-align {
+  text-align:center!important;
+}
+
+.card-btn {
+  background-color:black!important;
+  border-color: black!important;
+}
+
+.card-btn:hover {
+  background-color:white!important;
+  border-color:white!important;
+  color:black!important;
+}
+
+/* Home 텍스트 */
+.mycigar {
+  font-size: 120px;
+  font-weight:bold;
+  text-align: center!important;
+  color:white;
+}
+
+.aboutme {
+  font-size: 50px;
+  font-weight:bold;
+  text-align: center!important;
+  color:white;
+}
+
+.esse{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6행 */
+  height:100%;
+}
