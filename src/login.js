@@ -28,6 +28,7 @@ function Login({ setIsLoggedIn }) {
     AOS.init();
   }, []);
   
+  const [member_nick, setMemberNick] = useState('');
 
   const navigate = useNavigate();
 
@@ -49,11 +50,9 @@ function Login({ setIsLoggedIn }) {
         let member_nick = response.data.member_nick;
         setIsLoggedIn(true);
         console.log('로그인 성공');
-        console.log('사용자 이름: ' + window.member_nick);
+        console.log('이름 : '+ member_nick)
         navigate('/');
         return member_nick;
-
-
       } else {
         // 로그인 실패 처리
         console.log('로그인 실패');
