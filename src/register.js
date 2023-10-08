@@ -29,24 +29,27 @@ export default function Register() {
   const [passwordMatch, setPasswordMatch] = useState(null);
   const [memberId, setMemberId] = useState('');
   const [isButtonEnabled, setIsButtonEnabled] = useState(false); // "가입하기" 버튼 활성화 상태 변수
+  const [password, setPassword] = useState('');
+  const [checkPassword, setCheckPassword] = useState('');
+  const [isAgreementChecked, setIsAgreementChecked] = useState(false); // 이용약관 동의 체크 상태
 
   useEffect(() => {
-    // 필수 필드가 모두 채워져 있는지 확인
+    // 필수 필드가 모두 채워져 있고 이용약관에 동의한 경우에만 버튼 활성화
     const isAllFieldsFilled =
       memberId.trim() !== '' &&
-      document.getElementById('password').value.trim() !== '' &&
-      document.getElementById('checkpassword').value.trim() !== '' &&
+      password.trim() !== '' &&
+      checkPassword.trim() !== '' &&
       document.getElementById('member_nick').value.trim() !== '' &&
-      document.querySelector('input[type="checkbox"]').checked;
+      isIdValid === true;
 
-    setIsButtonEnabled(isAllFieldsFilled);
-  }, [memberId]);
+    setIsButtonEnabled(isAllFieldsFilled && isAgreementChecked);
+  }, [memberId, password, checkPassword, isIdValid, isAgreementChecked]);
 
   const handleCheckDuplicate = async () => {
     const member_id = memberId;
 
     if (member_id.trim() === '') {
-        return;
+      return;
     }
     try {
       const response = await axios.post('http://localhost/dynamic_web/src/check_user_id.php', { member_id });
@@ -62,25 +65,35 @@ export default function Register() {
     }
   };
 
-  const handlePasswordChange = () => {
-    const password = document.getElementById('password').value;
-    const checkpassword = document.getElementById('checkpassword').value;
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
 
-    if (checkpassword === password) {
-      setPasswordMatch(true);
-    } else {
+    // 비밀번호 확인 필드와 일치 여부를 확인합니다.
+    if (checkPassword !== newPassword) {
       setPasswordMatch(false);
+    } else {
+      setPasswordMatch(true);
+    }
+  };
+
+  const handleCheckPasswordChange = (e) => {
+    const newCheckPassword = e.target.value;
+    setCheckPassword(newCheckPassword);
+
+    // 비밀번호와 일치 여부를 확인합니다.
+    if (password !== newCheckPassword) {
+      setPasswordMatch(false);
+    } else {
+      setPasswordMatch(true);
     }
   };
 
   const handleSignUp = async () => {
-    const member_id = document.getElementById('member_id').value;
-    const password = document.getElementById('password').value;
-    const checkpassword = document.getElementById('checkpassword').value;
+    const member_id = memberId;
     const member_nick = document.getElementById('member_nick').value;
 
-    if (checkpassword !== password) {
-      setPasswordMatch(false);
+    if (!passwordMatch) {
       return;
     }
 
@@ -97,6 +110,10 @@ export default function Register() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleAgreementChange = (e) => {
+    setIsAgreementChecked(e.target.checked);
   };
 
   return (
@@ -144,26 +161,26 @@ export default function Register() {
                   />
                 </Grid>
                 <Grid item xs={4}>
-                <Button className='member_btn'
-                type="button"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-                onClick={handleCheckDuplicate}
-                >
-                중복 확인
-                </Button>
+                  <Button className='member_btn'
+                    type="button"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                    onClick={handleCheckDuplicate}
+                  >
+                    중복 확인
+                  </Button>
 
-                {isIdValid === false && memberId !== '' && (
-                <Typography variant="caption" color="error">
-                    <p className='id_no'>Same ID!</p>
-                </Typography>
-                )}
-                {isIdValid === true && memberId !== '' && (
-                <Typography variant="caption" style={{ color: 'green' }}>
-                    <p className='id_yes'>OK!</p>
-                </Typography>
-                )}
+                  {isIdValid === false && memberId !== '' && (
+                    <Typography variant="caption" color="error">
+                      <p className='id_no'>Same ID!</p>
+                    </Typography>
+                  )}
+                  {isIdValid === true && memberId !== '' && (
+                    <Typography variant="caption" style={{ color: 'green' }}>
+                      <p className='id_yes'>OK!</p>
+                    </Typography>
+                  )}
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
@@ -186,12 +203,15 @@ export default function Register() {
                     type="password"
                     id="checkpassword"
                     autoComplete="new-password"
-                    error={passwordMatch === false}
+                    error={passwordMatch === false && (
+                      <Typography variant="caption" style={{ color: 'red' }}>
+                        비밀번호 확인이 일치하지 않습니다.
+                      </Typography>)}
+                    onChange={handleCheckPasswordChange}
                     helperText={passwordMatch === false && (
-                        <Typography variant="caption" style={{ color: 'red' }}>
-                          비밀번호 확인이 일치하지 않습니다.
-                        </Typography>
-                      )}
+                      <Typography variant="caption" style={{ color: 'red' }}>
+                        비밀번호 확인이 일치하지 않습니다.
+                      </Typography>)}
                   />
                   {passwordMatch === true && (
                     <Typography variant="caption" style={{ color: 'green' }}>
@@ -201,7 +221,13 @@ export default function Register() {
                 </Grid>
                 <Grid item xs={12}>
                   <FormControlLabel
-                    control={<Checkbox value="allowExtraEmails" color="primary" />}
+                    control={
+                      <Checkbox
+                        value="allowExtraEmails"
+                        color="primary"
+                        onChange={handleAgreementChange} // 체크박스 상태 변경 핸들러 추가
+                      />
+                    }
                     label="이용 약관에 동의합니다"
                   />
                 </Grid>
@@ -209,17 +235,17 @@ export default function Register() {
                   이용약관 보기
                 </Linked>
               </Grid>
-              <Link to ="/login">
-              <Button
-                type="button"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-                onClick={handleSignUp}
-                disabled={!isButtonEnabled} // 필수 필드가 모두 채워져 있을 때만 버튼을 활성화합니다.
-              >
-            {isButtonEnabled ? '가입하기' : '이미 계정이 있으신가요? 로그인'}
-              </Button>
+              <Link to="/login">
+                <Button
+                  type="button"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                  onClick={handleSignUp}
+                  disabled={!isButtonEnabled} // 필수 필드가 모두 채워져 있을 때만 버튼을 활성화합니다.
+                >
+                  {isButtonEnabled ? '가입하기' : '이미 계정이 있으신가요? 로그인'}
+                </Button>
               </Link>
             </Box>
           </Box>

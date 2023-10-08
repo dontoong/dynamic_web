@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     #print_r($_SERVER);
     $body = file_get_contents('php://input');
     $data = json_decode($body, true);
-    #$member_nick = mysqli_real_escape_string($db, $data["member_nick"]);
     $member_id = mysqli_real_escape_string($db, $data["member_id"]);
     $password = mysqli_real_escape_string($db, $data["password"]);
 
@@ -20,8 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result) {
         $user = mysqli_fetch_assoc($result);
         if ($password == $user['password']) {
+            $member_nick = $user['member_nick'];
             // 비밀번호가 올바르게 검증됐을 때만 로그인 성공
-            $response = array("success" => true, "message" => "로그인 성공");
+            $response = array("success" => true, "message" => "로그인 성공", "member_nick" => $member_nick);
             echo json_encode($response);
 
         } else {

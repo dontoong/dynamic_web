@@ -6,14 +6,15 @@ function Member() {
 
     return (
       <>
-<br />
+<div>
 <Link to ="/login">
-<Button className='btn'>로그인</Button>
+<Button className='btn-login'>로그인</Button>
 </Link>
 <Link to="/register">
-<Button className='btn'>회원가입</Button>
+<Button className='btn-login'>회원가입</Button>
 </Link>
 <br/><br/>
+</div>
 </>
   );
 }

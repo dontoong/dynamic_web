@@ -1,17 +1,21 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import './main.css'
 
 function Header({ isLoggedIn }) {
+
+  const navigate = useNavigate();
   
-  const memberPage = (e) => {
+  const memberPage = async (event) => {
     // 여기에서 로그인 상태를 확인하거나 필요한 조건을 확인하세요.
     //const isLoggedIn = setIsLoggedIn/* 여기에서 로그인 상태를 확인하는 로직을 추가하세요 */;
 
     if (!isLoggedIn) {
       window.alert("로그인이 필요합니다.");
-      e.preventDefault();
+      event.preventDefault();
+      navigate('/login');
+      
 
     }
   }

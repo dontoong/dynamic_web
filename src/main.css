@@ -16,23 +16,43 @@ body {
   color:white!important;
 }
 
-.welcome {
-  float:right;
-}
+
 /* 헤더파일의 상단 이미지 크기 */
 .header-img {
   width:15%!important;
 }
 
 /* 로그인과 회원가입 버튼 */
-.btn{
+.btn-login{
+  margin-top:10px;
   margin-right:15px;
   float:right;
   background-color:#666666!important;
   border-color: #666666!important;
 }
 
-.btn:hover{
+.btn-login:hover{
+  background-color: white!important;
+  border-color: white!important;
+  color:black!important;
+}
+
+/* 로그아웃 버튼과 환영하는 문구 */
+.welcome {
+  margin-top:18px;
+  margin-right:15px;
+  float:right;
+}
+
+.btn-logout{
+  margin-top:10px;
+  margin-right:15px;
+  float:right;
+  background-color:#666666!important;
+  border-color: #666666!important;
+}
+
+.btn-logout:hover{
   background-color: white!important;
   border-color: white!important;
   color:black!important;

@@ -1,14 +1,12 @@
+// Login.js
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import LinkMui from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -16,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios'; // Axios 추가
+import MemberO from './MemberO'
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,32 +23,37 @@ import './sub.css';
 
 const defaultTheme = createTheme();
 
-function Login({setIsLoggedIn}) {
+function Login({ setIsLoggedIn }) {
   useEffect(() => {
     AOS.init();
   }, []);
+  
+  const [member_nick, setMemberNick] = useState('');
 
   const navigate = useNavigate();
-
 
   const handleLogin = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    
+
     const member_id = formData.get('member_id');
     const password = formData.get('password');
 
     try {
-      const response = await axios.post('http://localhost/dynamic_web/src/login.php', { member_id:member_id,password:password });
+      const response = await axios.post('http://localhost/dynamic_web/src/login.php', { member_id: member_id, password: password });
       console.log(response.data);
       console.log(response);
       let result = JSON.stringify(response.data);
-      console.log(result)
+      console.log(result);
       if (response.data.success) {
         // 로그인 성공 처리
+        window.member_nick = response.data.member_nick;
         setIsLoggedIn(true);
         console.log('로그인 성공');
+        console.log('사용자 이름: ' + window.member_nick);
         navigate('/');
+
+
       } else {
         // 로그인 실패 처리
         console.log('로그인 실패');
@@ -106,14 +110,14 @@ function Login({setIsLoggedIn}) {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-              >로그인
+              >
+                로그인
               </Button>
               <Grid container>
                 <Grid item xs>
                 </Grid>
                 <Grid item>
-                  <Link to="/register">계정이 없으신가요? 회원가입하기
-                  </Link>
+                  <Link to="/register">계정이 없으신가요? 회원가입하기</Link>
                 </Grid>
               </Grid>
             </Box>
