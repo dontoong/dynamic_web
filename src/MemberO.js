@@ -5,7 +5,7 @@ import './main.css'
 import axios from 'axios'; // Axios 추가
 import Login from './login'
 
-function MemberO({ setIsLoggedIn }) {
+function MemberO({ setIsLoggedIn, member_nick }) {
   const navigate = useNavigate();
   const response = axios.post('http://localhost/dynamic_web/src/login.php');
 
@@ -14,14 +14,14 @@ function MemberO({ setIsLoggedIn }) {
     setIsLoggedIn(false); // 로그인 상태를 업데이트하여 로그아웃 상태로 변경합니다.
     event.preventDefault();
     navigate('/login');
-    console.log();
+    console.log(member_nick);
     
   };
 
   return (
     <div>
       <Button className='btn-logout' onClick={handleLogout}>로그아웃</Button>
-      <p className='welcome'>{window.member_nick}님 환영합니다.</p>
+      <p className='welcome'>{member_nick}님 환영합니다.</p>
       <br /><br />
     </div>
   );

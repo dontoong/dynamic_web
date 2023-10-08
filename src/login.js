@@ -47,11 +47,12 @@ function Login({ setIsLoggedIn }) {
       console.log(result);
       if (response.data.success) {
         // 로그인 성공 처리
-        window.member_nick = response.data.member_nick;
+        let member_nick = response.data.member_nick;
         setIsLoggedIn(true);
         console.log('로그인 성공');
         console.log('사용자 이름: ' + window.member_nick);
         navigate('/');
+        return member_nick;
 
 
       } else {
