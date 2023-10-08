@@ -28,7 +28,6 @@ function Login({ setIsLoggedIn }) {
     AOS.init();
   }, []);
   
-  const [member_nick, setMemberNick] = useState('');
 
   const navigate = useNavigate();
 
