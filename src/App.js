@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 import Header from './Header'
 import Member from './Member'
@@ -32,13 +33,14 @@ import NotFound from './NotFound'
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태를 저장하는 상태
-
+  const [member_nick, setMemberNick] = useState(false);
 // 주소 이름 : /Home, 요소 이름 : Home
   return (
-
+<Provider store={store}>
     <BrowserRouter>
-          {isLoggedIn ? (
-        <MemberO setIsLoggedIn={setIsLoggedIn} />
+          {isLoggedIn ? (<>
+        <MemberO setIsLoggedIn={setIsLoggedIn} setMemberNick={setMemberNick} />
+        </>
       ) : (
         <Member setIsLoggedIn={setIsLoggedIn} />
       )}
@@ -64,6 +66,7 @@ function App() {
           <Route path="/korea_cigar/*" element={<NotFound />}></Route>
           </Routes>
         </BrowserRouter>
+        </Provider>
   );
 }
 

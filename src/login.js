@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setMemberNick } from './redux/actions';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -27,8 +30,8 @@ function Login({ setIsLoggedIn }) {
   useEffect(() => {
     AOS.init();
   }, []);
-  
-  const [member_nick, setMemberNick] = useState('');
+
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -47,12 +50,12 @@ function Login({ setIsLoggedIn }) {
       console.log(result);
       if (response.data.success) {
         // 로그인 성공 처리
-        let member_nick = response.data.member_nick;
+        const member_nick = response.data.member_nick;
         setIsLoggedIn(true);
         console.log('로그인 성공');
         console.log('이름 : '+ member_nick)
+        dispatch(setMemberNick(member_nick));
         navigate('/');
-        return member_nick;
       } else {
         // 로그인 실패 처리
         console.log('로그인 실패');
