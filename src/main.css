@@ -22,6 +22,7 @@ body {
   width:15%!important;
 }
 
+
 /* 로그인과 회원가입 버튼 */
 .btn-login{
   margin-top:10px;
@@ -36,6 +37,7 @@ body {
   border-color: white!important;
   color:black!important;
 }
+
 
 /* 로그아웃 버튼과 환영하는 문구 */
 .welcome {
@@ -68,7 +70,7 @@ body {
   width: 100%;
 }
 
-/* 탭 메뉴 가로 길이 지정 & 텍스트 가운데 정렬*/
+/* 탭 메뉴 가로 길이 지정 & 텍스트 가운데 정렬 */
 .nav-item {
   flex-grow: 1;
   text-align: center;
@@ -79,7 +81,7 @@ body {
 .nav-tabs .nav-link {
   font-size:30px;
   background-color: black;
-  color: white;
+  color: white!important;
   border-top-left-radius: 0% !important;
   border-top-right-radius: 0% !important;
 }
@@ -101,6 +103,8 @@ body {
 
 
 
+
+/* 서브 페이지 */
 
 
 /* 카드 스타일 */
@@ -136,6 +140,7 @@ body {
   color:black!important;
 }
 
+
 /* Home 텍스트 */
 .mycigar {
   font-size: 120px;
@@ -151,12 +156,6 @@ body {
   color:white;
 }
 
-.esse{
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2열 */
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6행 */
-  height:100%;
-}
 
 .developer{
   width:100%!important;
