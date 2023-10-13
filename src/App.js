@@ -3,6 +3,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import './main.css'
+
 import Header from './Header'
 import Member from './Member'
 import MemberO from './MemberO'
@@ -24,6 +26,7 @@ import Miix from './miix'
 import Neo from './neo'
 
 import About_me from './about_me'
+import Developer from './developer'
 
 import Login from './login'
 import Register from './register'
@@ -38,13 +41,16 @@ function App() {
   return (
 <Provider store={store}>
     <BrowserRouter>
+
           {isLoggedIn ? (<>
         <MemberO setIsLoggedIn={setIsLoggedIn} setMemberNick={setMemberNick} />
         </>
       ) : (
         <Member setIsLoggedIn={setIsLoggedIn} />
       )}
+
     <Header isLoggedIn={isLoggedIn} />
+
     <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/korea_cigar" element={<Korea_cigar />}></Route>
@@ -65,6 +71,8 @@ function App() {
           
           <Route path="/korea_cigar/*" element={<NotFound />}></Route>
           </Routes>
+
+        <Developer />
         </BrowserRouter>
         </Provider>
   );

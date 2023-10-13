@@ -1,9 +1,4 @@
-// redux/actions.js
-export const setMemberNick = (nick) => ({
-    type: 'SET_MEMBER_NICK',
-    payload: nick,
-  });
-  
+
   // redux/reducers.js
   const initialState = {
     member_nick: '',

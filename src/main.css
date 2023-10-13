@@ -39,9 +39,10 @@ body {
 
 /* 로그아웃 버튼과 환영하는 문구 */
 .welcome {
-  margin-top:18px;
+  margin-top:13px;
   margin-right:15px;
   float:right;
+  font-size:20px;
 }
 
 .btn-logout{
@@ -155,4 +156,12 @@ body {
   grid-template-columns: 1fr 1fr; /* 2열 */
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6행 */
   height:100%;
+}
+
+.developer{
+  width:100%!important;
+  position:fixed;
+  bottom:0;
+  text-align:right;
+  font-size:30px;
 }
