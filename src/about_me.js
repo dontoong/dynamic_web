@@ -19,7 +19,7 @@ function About_me() {
   <br />
   사용한 언어 : CSS, HTML, JS, PHP<br />
   <br />
-  사용한 DB : MYSQL<br />
+  사용한 서버&DB : Apache, MYSQL<br />
   <br />
   사용한 프레임워크 및 라이브러리<br />
   React, Bootstrap, AOS, MUI, Axios<br />

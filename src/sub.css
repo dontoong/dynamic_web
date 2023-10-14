@@ -229,3 +229,9 @@ h3 {
   text-align: center!important;
   z-index: 10!important; /* 다른 컨텐츠 위에 표시되도록 설정 */
 }
+
+/* 아이디 수정 불가 스타일 */
+.id-not-editable {
+  background-color: #b9b9b9!important; /* 빨간 배경색 */
+  border-radius:5px!important;
+}

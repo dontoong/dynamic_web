@@ -26,13 +26,13 @@ export default function Register() {
   }, []);
 
   const [isIdValid, setIsIdValid] = useState('');
+  const [isUsernameError, setIsUsernameError] = useState(false);
   const [passwordMatch, setPasswordMatch] = useState(null);
   const [memberId, setMemberId] = useState('');
   const [isButtonEnabled, setIsButtonEnabled] = useState(false); // "가입하기" 버튼 활성화 상태 변수
   const [password, setPassword] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
   const [isAgreementChecked, setIsAgreementChecked] = useState(false); // 이용약관 동의 체크 상태
-
   useEffect(() => {
     // 필수 필드가 모두 채워져 있고 이용약관에 동의한 경우에만 버튼 활성화
     const isAllFieldsFilled =
@@ -45,10 +45,12 @@ export default function Register() {
     setIsButtonEnabled(isAllFieldsFilled && isAgreementChecked);
   }, [memberId, password, checkPassword, isIdValid, isAgreementChecked]);
 
+
   const handleCheckDuplicate = async () => {
     const member_id = memberId;
 
     if (member_id.trim() === '') {
+      setIsUsernameError(false);
       return;
     }
     try {
@@ -57,9 +59,18 @@ export default function Register() {
 
       if (isDuplicate) {
         setIsIdValid(false);
+        // 아이디 생성 중복 시 수정 가능하도록 아이디 입력란 활성화
+        document.getElementById('member_id').disabled = false;
       } else {
         setIsIdValid(true);
+
+        // 아이디 생성 절차 통과 시 수정 못하게 아이디 입력란 비활성화
+        document.getElementById('member_id').classList.add('id-not-editable');
+        document.getElementById('member_id').disabled = true;
       }
+
+      
+
     } catch (error) {
       console.error(error);
     }
@@ -170,7 +181,7 @@ export default function Register() {
                   >
                     중복 확인
                   </Button>
-
+                  
                   {isIdValid === false && memberId !== '' && (
                     <Typography variant="caption" color="error">
                       <p className='id_no'>Same ID!</p>
@@ -205,7 +216,7 @@ export default function Register() {
                     autoComplete="new-password"
                     error={passwordMatch === false && (
                       <Typography variant="caption" style={{ color: 'red' }}>
-                        비밀번호 확인이 일치하지 않습니다.
+
                       </Typography>)}
                     onChange={handleCheckPasswordChange}
                     helperText={passwordMatch === false && (

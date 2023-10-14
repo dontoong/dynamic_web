@@ -59,6 +59,7 @@ function Login({ setIsLoggedIn }) {
       } else {
         // 로그인 실패 처리
         console.log('로그인 실패');
+        window.alert('회원정보가 일치하지 않습니다.');
       }
     } catch (error) {
       // 오류 처리
