@@ -4,7 +4,7 @@
 ## 동작 영상
 https://youtu.be/7m9F2uiLcDU?si=PivY8urWncpUlIcE
 
-## 프로젝트 목적
+## 프로젝트 목적 및 목표
 ![image](https://github.com/dontoong/dynamic_web/assets/106039761/92a84684-ee39-4986-b37d-164ace5badca)
 
 ## 개발 환경
