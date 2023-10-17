@@ -18,3 +18,6 @@
 
 ## 동작 영상
 https://youtu.be/Y39Zmg3ZE_I?si=H5Fru3Fdp1cjxUlH
+
+## 메인 페이지
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/26170ee9-f810-4125-8074-42a908153595)
