@@ -16,6 +16,9 @@
 ## 웹 서버 구조
 ![image](https://github.com/dontoong/dynamic_web/assets/106039761/f339a3a3-e6e0-4a27-b931-6616e252cb59)
 
+## 데이터베이스 구조
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/82345488-bc17-488f-9663-38e99da18f0e)
+
 ## 동작 영상
 https://youtu.be/Y39Zmg3ZE_I?si=H5Fru3Fdp1cjxUlH
 
