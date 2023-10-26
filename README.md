@@ -1,74 +1,26 @@
-# Getting Started with Create React App
+# 환영합니다
+일부 국산, 해외, 전자담배를 모아놓은 블로그 형태의 동적 웹사이트를 제작하였으며, 회원가입과 로그인 기능을 활용하여 로그인 중에만 특정 웹페이지를 접속 할 수 있도록 개발하였습니다.<br/>
+<br/>
+개발 기간 : 2022.04~2022.12<br/>
+<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 목적 및 목표
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/92a84684-ee39-4986-b37d-164ace5badca)
 
-## Available Scripts
+## 개발 환경
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/26115363-6aab-4992-a103-447fb983fce9)
 
-In the project directory, you can run:
+## 웹사이트 구조
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/e4c9ba95-22b7-46c1-beb5-41cb8c5fb0a9)
 
-### `npm start`
+## 웹 서버 구조
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/f339a3a3-e6e0-4a27-b931-6616e252cb59)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 데이터베이스 구조
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/77abb94b-7705-4e99-bdbd-8cf32505812e)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 동작 영상
+https://youtu.be/Y39Zmg3ZE_I?si=H5Fru3Fdp1cjxUlH
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# dynamic_web
-# dynamic_web
-# dynamic_web
-# dynamic_web
+## 메인 페이지
+![image](https://github.com/dontoong/dynamic_web/assets/106039761/26170ee9-f810-4125-8074-42a908153595)
