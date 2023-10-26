@@ -9,7 +9,7 @@ import Login from './login'
 
 function MemberO({ setIsLoggedIn }) {
   const navigate = useNavigate();
-  const nickname = useSelector((state) => state.member_nick);
+  const nickname = useSelector((state) => state.member_nick); //login.js에서 리액트 리덕스로 저장한 변수를 이곳으로 변수 호출
 
   const handleLogout = async (event) => {
     setIsLoggedIn(false);

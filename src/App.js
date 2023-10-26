@@ -36,14 +36,13 @@ import NotFound from './NotFound'
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태를 저장하는 상태
-  const [member_nick, setMemberNick] = useState(false);
 // 주소 이름 : /Home, 요소 이름 : Home
   return (
 <Provider store={store}>
     <BrowserRouter>
 
           {isLoggedIn ? (<>
-        <MemberO setIsLoggedIn={setIsLoggedIn} setMemberNick={setMemberNick} />
+        <MemberO setIsLoggedIn={setIsLoggedIn} />
         </>
       ) : (
         <Member setIsLoggedIn={setIsLoggedIn} />

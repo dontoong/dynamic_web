@@ -54,7 +54,7 @@ function Login({ setIsLoggedIn }) {
         setIsLoggedIn(true);
         console.log('로그인 성공');
         console.log('이름 : '+ member_nick)
-        dispatch(setMemberNick(member_nick));
+        dispatch(setMemberNick(member_nick)); // 디스패치를 사용하여 리액트 리덕스 스토어에 변수를 저장
         navigate('/');
       } else {
         // 로그인 실패 처리
