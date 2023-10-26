@@ -68,7 +68,7 @@ function App() {
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />}></Route>
           <Route path="/register" element={<Register />}></Route>
           
-          <Route path="/korea_cigar/*" element={<NotFound />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
           </Routes>
 
         <Developer />

@@ -1,6 +1,6 @@
 // Login.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -17,7 +17,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios'; // Axios 추가
-import MemberO from './MemberO'
 
 import AOS from "aos";
 import "aos/dist/aos.css";

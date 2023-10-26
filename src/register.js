@@ -104,7 +104,7 @@ export default function Register() {
     const member_id = memberId;
     const member_nick = document.getElementById('member_nick').value;
 
-    if (!passwordMatch) {
+    if (isUsernameError || !passwordMatch) {
       return;
     }
 
