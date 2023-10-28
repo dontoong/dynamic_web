@@ -51,7 +51,7 @@ function Header({ isLoggedIn }) {
           </NavLink>
         </li>
         <li className="nav-item">
-          {/* 'About me' 링크 클릭 시 handleAboutMeClick 함수 호출 */}
+          {/* 'About me' 링크 클릭 시 memberPage 함수 호출 */}
           <NavLink to="/about_me" className="nav-link" activeClassName="active" onClick={memberPage}>
             About me
           </NavLink>

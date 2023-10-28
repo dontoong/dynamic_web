@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom"
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -37,6 +37,8 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태를 저장하는 상태
 // 주소 이름 : /Home, 요소 이름 : Home
+
+
   return (
 <Provider store={store}>
     <BrowserRouter>
@@ -64,7 +66,7 @@ function App() {
           <Route path="/elec_cigar" element={<Elec_cigar />}></Route>
             <Route path="/elec_cigar/miix" element={<Miix />}></Route>
             <Route path="/elec_cigar/neo" element={<Neo />}></Route>
-          <Route path="/about_me" element={<About_me />}></Route>
+            <Route path="/about_me" element={isLoggedIn ? ( <About_me />) : ( <> {window.alert('로그인이 필요합니다.')} <Navigate to="/login" /> </> ) } />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />}></Route>
           <Route path="/register" element={<Register />}></Route>
           
