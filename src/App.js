@@ -66,7 +66,7 @@ function App() {
           <Route path="/elec_cigar" element={<Elec_cigar />}></Route>
             <Route path="/elec_cigar/miix" element={<Miix />}></Route>
             <Route path="/elec_cigar/neo" element={<Neo />}></Route>
-            <Route path="/about_me" element={isLoggedIn ? ( <About_me />) : ( <> {window.alert('로그인이 필요합니다.')} <Navigate to="/login" /> </> ) } />
+            <Route path="/about_me" element={isLoggedIn ? ( <About_me />) : ( <> <Navigate to="/login" /> </> ) } />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />}></Route>
           <Route path="/register" element={<Register />}></Route>
           
